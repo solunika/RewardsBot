@@ -1,0 +1,10 @@
+[
+  {
+    "key": "BOT_TOKEN",
+    "help": "Token from discord application "
+  },
+  {
+    "key": "BOT_ID",
+    "help": "Id from discord bot user "
+  }
+]
