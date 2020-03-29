@@ -1,4 +1,4 @@
-# Descripción 
+# Description 
 
 An experimental bot (initially for discord) that allows us to manage a reward system through coins and items that can be purchased
 
