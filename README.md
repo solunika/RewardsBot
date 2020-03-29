@@ -4,7 +4,7 @@ An experimental bot (initially for discord) that allows us to manage a reward sy
 
 It allows:
 - Manage balances in wallets
-- Transfer balances between members' wallets
+- Transfer balances between member's wallets
 - Manage items to the server store catalog
 - Spend the coins on these items
 # Implementation
@@ -33,26 +33,26 @@ In a chat group, the following conversation occurs:
 ---
 ## General commands
 ```
-/help
+help
 	guess this one
-/listItems
+listItems
 	
 List items available in the store
 
-/buy [itemId]
+buy [itemId]
 	
 	Buy an item from the store
-/transfer [amout] [userId]
-	Transfers coins to  user
+transfer [amout] [userId]
+	Transfers [amount] coins to user with [userID]
 ```
 
 
 ## Admin only commands
 ```
-/emmit [amout]
+emmit [amout]
 		Transfers [amount] monedas a un usuario
 
-/createItem [itemName] [ItemDescription] [ItemAmount] [ItemPrice]
+createItem [itemName] [ItemDescription] [ItemAmount] [ItemPrice]
 		Create an item in the servers store
 
 ```
@@ -61,8 +61,7 @@ List items available in the store
 
 ## Next Steps
 	
-
 - [x] We should have a database for user accounts and movements.
-- [ ]- We should have a way for an administrator to manage the items, available quantity and prices
-- [ ]- Time tracking integration to Atlassian's Jira
-- [ ]- Reports, history
+- [ ] We should have a way for an administrator to manage the items, available quantity and prices
+- [ ] Time tracking integration to Atlassian's Jira
+- [ ] Reports, history
