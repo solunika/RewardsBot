@@ -2,7 +2,7 @@
   "name": "discordbot",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +13,7 @@
     "docenv": "^1.0.0",
     "dotenv": "^8.2.0",
     "glob": "^7.1.6",
+    "mongoose": "^5.9.7",
     "nedb-promise": "^2.0.1"
   }
 }

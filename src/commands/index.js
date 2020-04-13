@@ -11,4 +11,6 @@ files.forEach(file => {
 });
 
 module.exports = commands;
-module.exports.help = (msg) => msg.channel.send(descriptions.join("\n"));
+const help = (msg) => msg.channel.send(descriptions.join("\n"));
+module.exports.help = help
+module.exports.undefined = help

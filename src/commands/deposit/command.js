@@ -1,9 +1,9 @@
-const WaletsDb = require("../../db/wallets");
+const WaletsDb = require("../../db/nedb/wallets");
 
 module.exports.deposit = async (msg, dest, amount) => {
   amount = parseInt(amount)
   msg.channel.startTyping();
-  await WaletsDb.update({ user: dest }, { $inc: { amount } }, { upsert: true })
+  await WaletsDb.deposit(dest, msg.guild, amount)
   msg.channel.stopTyping();
   msg.channel.send(`Se deposito $${amount} en la billetera de  ${dest}`);
 }

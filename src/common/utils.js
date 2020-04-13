@@ -1,0 +1,1 @@
+module.exports.simplifyId = id => typeof id == "string" ? id.replace(/[^0-9.]/g, "") : "";
