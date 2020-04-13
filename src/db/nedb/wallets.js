@@ -10,7 +10,6 @@ module.exports.findUserWallet = async (usrId, svr) => {
   const svrId = simplifyId(svr.id),
     walletPath = `wallets.${svrId}`,
     user = await db.findOne({ uid: usrId, [walletPath]: { $exists: true } });
-  console.log(JSON.stringify(user.wallets[svrId]))
   return user ? user.wallets[svrId] : null
 }
 
