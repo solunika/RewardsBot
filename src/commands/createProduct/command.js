@@ -1,3 +1,4 @@
+const { Config } = require("docenv")
 const ShopDb = require("../../db/nedb/shop")
 
 module.exports.sell = async (msg, ...params) => {
@@ -9,5 +10,5 @@ module.exports.sell = async (msg, ...params) => {
 
 module.exports.description = `
 \`\`\`sell: create product to sell.
-Use - @RewardsBot sell <productName> <productAmount> <productQuantity (optional)>\`\`\`\n
+Use - @${Config.BOT_NAME} sell <productName> <productAmount> <productQuantity (optional)>\`\`\`\n
 `

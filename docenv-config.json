@@ -6,5 +6,10 @@
   {
     "key": "BOT_ID",
     "help": "Id from discord bot user "
+  },
+  {
+    "key": "BOT_NAME",
+    "help": "Bot name used for help",
+    "value": "RewardsBot"
   }
 ]

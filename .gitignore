@@ -1,3 +1,8 @@
 node_modules/
-wallets.json
 .env
+
+
+
+shop.json
+users.json
+transactions.json

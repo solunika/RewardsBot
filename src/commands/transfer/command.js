@@ -1,3 +1,4 @@
+const { Config } = require("docenv")
 const WaletsDb = require("../../db/nedb/wallets")
 
 
@@ -14,5 +15,5 @@ module.exports.transfer = async (msg, dest, amount) => {
 
 module.exports.description = `
 \`\`\`Transfer: Give money from your wallet to user.
-Use - @RewardsBot transfer <@User> <amount>\`\`\`\n
+Use - @${Config.BOT_NAME} transfer <@User> <amount>\`\`\`\n
 `

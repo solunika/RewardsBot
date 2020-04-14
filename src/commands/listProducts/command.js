@@ -1,3 +1,4 @@
+const { Config } = require("docenv")
 const ShopDb = require("../../db/nedb/shop")
 
 module.exports.shop = async (msg) => {
@@ -9,5 +10,5 @@ module.exports.shop = async (msg) => {
 
 module.exports.description = `
 \`\`\`shop: list all products available.
-Use - @RewardsBot list\`\`\`\n
+Use - @${Config.BOT_NAME} list\`\`\`\n
 `

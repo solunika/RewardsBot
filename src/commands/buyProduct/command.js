@@ -1,3 +1,4 @@
+const { Config } = require("docenv")
 const ShopDb = require("../../db/nedb/shop")
 const UserDb = require("../../db/nedb/wallets")
 const TransactionsDb = require("../../db/nedb/transactions")
@@ -17,5 +18,5 @@ module.exports.buy = async (msg, index) => {
 
 module.exports.description = `
 \`\`\`buy: buy product available.
-Use - @RewardsBot buy <productIndex>\`\`\`\n
+Use - @${Config.BOT_NAME} buy <productIndex>\`\`\`\n
 `
