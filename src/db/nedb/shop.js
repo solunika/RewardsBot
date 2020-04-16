@@ -18,7 +18,7 @@ module.exports.createProduct = async (owner, svr, productName, productAmount, pr
 module.exports.listProducts = async (svr) => {
   const svrId = simplifyId(svr.id),
     productList = await db.findOne({ server: svrId });
-  return productList.products;
+  return productList?productList.products: null;
 }
 
 module.exports.getProduct = async (svr, index) => {

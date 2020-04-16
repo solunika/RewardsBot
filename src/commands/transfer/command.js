@@ -1,5 +1,6 @@
 const { Config } = require("docenv")
 const WaletsDb = require("../../db/nedb/wallets")
+const TransactionsDb = require("../../db/nedb/transactions")
 
 
 module.exports.transfer = async (msg, dest, amount) => {
@@ -9,7 +10,10 @@ module.exports.transfer = async (msg, dest, amount) => {
 
   let wallet = await WaletsDb.transfer(msg.author.id, dest, msg.guild, amount)
   msg.channel.stopTyping();
-  if (wallet) msg.channel.send(`Se transfirio $${amount} a ${dest}`);
+  if (wallet) {
+    await TransactionsDb.transfer(msg.guild, msg.author.id, dest, amount);
+    msg.channel.send(`Se transfirio $${amount} a ${dest}`);
+  }
   else msg.channel.send(`Saldo insuficiente`);
 }
 
