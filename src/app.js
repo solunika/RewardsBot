@@ -1,5 +1,6 @@
 const { Config, default: loadEnv } = require("docenv")
 loadEnv()
+const Utils = require('./common/utils');
 const Discord = require('discord.js');
 const Commands = require('./commands');
 const client = new Discord.Client();
@@ -15,7 +16,7 @@ client.on('message', async msg => {
 
   const mention = params.shift() // El primer parametro siempre es la mención
 
-  if (!mention.includes(client.user.id) || mention.startsWith("@")) return; // Cancela la ejecucion si no se menciona primero al Bot
+  if (!Utils.simplifyId(mention) === client.user.id || !mention.startsWith("<@")) return; // Cancela la ejecucion si no se menciona primero al Bot
   
   const operation = params.shift() // El primer parametro siempre es la operacion
   params.unshift(msg) // Agrego el mensaje a los parametros para que pueda interactuar en el chat

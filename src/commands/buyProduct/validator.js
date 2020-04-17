@@ -1,3 +1,1 @@
-module.exports = (...params) => {
-
-}
+module.exports = (...params) => true

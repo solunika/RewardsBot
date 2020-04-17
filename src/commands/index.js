@@ -3,9 +3,10 @@ let commands = {};
 let descriptions = [];
 
 const files = glob.sync(__dirname + "/**/command.js", { ignore: "**/index.js" })
-files.forEach(file => {
-  let command = require(file)
-  Object.assign(commands, command)
+files.forEach((file, ) => {
+  let validator = require(file.replace("command.js", "validator.js"))
+  let command = require(file), commandName = Object.keys(command)[0]
+  Object.assign(commands, { [commandName]: async (...params) => { if (await validator(...params)) return command[commandName](...params) } })
 
   descriptions.push((command.description || "").trim());
 });
