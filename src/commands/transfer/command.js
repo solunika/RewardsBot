@@ -1,11 +1,13 @@
 const { Config } = require("docenv")
 const WaletsDb = require("../../db/nedb/wallets")
 const TransactionsDb = require("../../db/nedb/transactions")
-
+const _ = require(lodash);
 
 module.exports.transfer = async (msg, dest, amount) => {
+  
   amount = parseInt(amount)
   msg.channel.startTyping();
+
 
 
   let wallet = await WaletsDb.transfer(msg.author.id, dest, msg.guild, amount)
